@@ -1,0 +1,124 @@
+
+            // Bckend(1st)
+            // remember all file are run in Backend forlder not in File_sytsem forlder
+// to check the version of node js => node -v and also check npm -v
+// np, is nothing but is a type of framwork in which we can take and write our packages
+
+
+if we have to create a project in nodejs so we have to create in new terminal 
+
+(1) npm init -y  => no not asking any questi on about your project but if you have to define name to project so
+  npm init  our package name ready 
+   
+   after that enter next and if you want to enter so you can
+
+
+   here we create package from npm
+
+
+
+
+  (2) npm =>  node package manager
+  phale this use for node js packages, but after some time in this many package is avilable
+ for install any package from npm write npm install package_name or npm i package_name
+
+ ## aftere install the package our package,json update and we see out package in thaat file
+
+##  for uninstall package => npm ununstall package_name
+
+   ## install version of package
+   npm i package_name@version
+   exapmle = npm i accessibility@3.0.9
+
+
+## when we install any module so all the module is write in node_module forlder which is auto metic create
+## so when we install a package which is depandent on other package so that all are come in node_module
+
+
+Devdipendancy:- the package which is use in development ande when our app developd and deploy(complete) so after that 
+that package remove is call dev depandency
+
+
+# scripts:- ther are 2 script start or test
+  for run script +> npm run dev,npm start
+
+so in script when we use run os => like we give command to os and os create its own table so if the cmmand in table so run
+so when we write npm start or npm test itmeans the command which we give is present in our table 
+
+and when we write other commasnd which are write by us manually so we use npm run 
+
+
+
+
+          ##(4)
+          In mern dev m=mongoDb, e = Express.js, r =react.js, n = node.js
+express.js=> this is a npm package  , this is framwork -> it's flow 
+expressjs manages everything from reciving the request and giving the response on servers
+
+      # we can creat route => is part after the domain page (mtlb konse page pr kya dikhega vp btata hai)
+      app.get(rote,requestHandler)   ,requestHandler isa function
+      for the restart the server we install nodemon which is globel libreris
+      npm i nodemon -g
+
+       now after nodemon we will run the server with out the restart 
+       for run  by the nodemon we type in server => "npx nodemon file_name.js"
+
+# middlewaare:- is the the work before to the route in this let some request come from user so the request is direct go to
+route but if we want that the request is not go to dirct route we use middlewaare
+          so jb server ne request send kri to direct vo gai route pr
+
+          write before app.get route
+          
+          
+          app.use(function(req,res,next){
+            consol.log('middleware chla)     by using that the circle run 
+                    but for runn after this we use next();
+                    next();
+          })
+we can create many middlewaare and also use middlewaare between the two route4
+
+
+## request and response
+
+
+        # error handling:- ther are a function err which handle err
+    app.get("/profile",function(req,res,next){
+      return next(new Error("something error"))   // this go to console
+    })
+
+
+        app.use(err,req,res,next)=>{
+          consol.error(err.stack)
+          res.status(500).send("somthing broke") this go to frontend
+        }
+
+
+      ###5
+      form handling and working with the forms
+    handlebackend process of forms and making sure the data come from any fronted lib, framework,
+     templeting enginges we still handle it at the backend
+
+              for express install cookie-parser
+
+        session cookie:- let we login at any webpage for download any doc soo after login server and then they give u doc
+      now server  forget us so again we have to login  this process is so haddik so we study session-cookie
+
+session-cookie:- we kuch bhi data browser pr rakh skhte hai or jb kuch bhi request \
+backend pr krenge to  wo data automatic backend pr chala jaega
+
+    In this a string is save on the frontend so look if i save my login ask something so after that they can't forget us
+    they always connect that string with our sms and our server give ans  this was cookie (that string)
+    sassion is that connection between that string and  backend
+
+    so if we remove any string from fronted and backend so we logout
+     for use this we write  which is just before route
+
+app.use(express.json)
+app.use(express.urlencoded({extended:true}))    
+
+        we know system read a diff language so that data which we give that convert in encorupt string
+means we give plain text and the data go to server as blob so we have to readeble that data so that line use for readable
+
+
+
+After this go to the practise forlder for practise and some imp topic like dynamic routing
